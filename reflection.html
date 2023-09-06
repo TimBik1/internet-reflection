@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet: A Global and Local Reflection</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0077cc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff; /* using the white color here */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0077cc; /* using the blue color here */
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        button {
+            display: block;
+            background-color: #cc0000; /* using the red color here */
+            color: #ffffff; /* text on button to be white */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0077cc; /* switch to blue on hover */
+        }
+
+        #additionalReflection {
+            display: none;
+            opacity: 0;
+            animation-name: fadeIn;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tim Bikmullin</h1>
+        <p>
+            The Internet, a vast expanse of interconnected digital realms, reflects both our global aspirations and local identities. While we perceive it as a singular entity, it is a mirror of our terrestrial existence, adapting and morphing based on our cultural, linguistic, and regional differences.
+        </p>
+        <p>
+            Through search engines and massive platforms like Facebook and Google, we navigate this digital space, with its architecture continually shaping and being shaped by us. The digital realm is an extension, a reflection, a new layer of our reality.
+        </p>
+        <button onclick="showReflection()">Reflect Further</button>
+        <p id="additionalReflection">
+            As the Internet evolves, so does our understanding of space, distance, and connection. We are at once the center and a mere speck in this vast digital universe. As boundaries blur and merge, as the local intertwines with the global, we redefine what it means to be connected, to belong, and to exist in the age of the Internet.
+        </p>
+    </div>
+
+    <!-- ... your head content ... -->
+
+<body>
+    <!-- Add the canvas element here -->
+    <canvas id="drawingCanvas" style="position:absolute; top:0; left:0; z-index: -1;"></canvas>
+
+    <div class="container">
+        <!-- ... rest of your container content ... -->
+    </div>
+
+    <script>
+        const canvas = document.getElementById('drawingCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Resize the canvas to fill the whole window
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function showReflection() {
+            const reflection = document.getElementById('additionalReflection');
+            reflection.style.display = 'block';
+        }
+
+        document.body.addEventListener('mousemove', function (e) {
+            ctx.strokeStyle = '#cc0000'; // red color
+            ctx.lineWidth = 2; // width of the line
+            ctx.beginPath();
+            ctx.moveTo(e.clientX, e.clientY - 10); // start above the cursor
+            ctx.lineTo(e.clientX, e.clientY + 10); // draw to below the cursor
+            ctx.stroke();
+        });
+    </script>
+</body>
+
+</html>
+
+</body>
+</html>
+
+
+
